@@ -38,15 +38,23 @@ namespace S13Reto3
             {
                 using (var lector = new StreamReader(rutaCompleta, true))
                 {
+
+                    /*
+                    var message = new EmailMessage("Reto3", lector.ReadToEnd());
+                    message.Body = lector.ReadToEnd();
+                    message.To.Add("cursosunilat@gmail.com");
+                    await Email.ComposeAsync(message);
+                    */
+                    
                     String TextoLeido;
                     while ((TextoLeido = lector.ReadLine()) != null)
                     {
-                        temp.Text = TextoLeido;
                         var message = new EmailMessage("Reto3", TextoLeido);
                         message.Body = TextoLeido;
                         message.To.Add("cursosunilat@gmail.com");
                         await Email.ComposeAsync(message);
                     }
+                    
                 }
             }
 

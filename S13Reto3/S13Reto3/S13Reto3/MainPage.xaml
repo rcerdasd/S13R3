@@ -10,7 +10,6 @@
         <Entry x:Name="entrFrase" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Placeholder="Ingrese una frase"/>
         <Button x:Name="btnGuardar" Text="Guardar texto"/>
         <Button x:Name="btnEnviar" Text="Enviar"/>
-        <Entry x:Name="temp"/>
     </StackLayout>
 
 </ContentPage>
