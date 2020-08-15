@@ -45,7 +45,8 @@ namespace S13Reto3
                     message.To.Add("cursosunilat@gmail.com");
                     await Email.ComposeAsync(message);
                     */
-                    
+                    /*
+                    //ESTE FUNCIONA
                     String TextoLeido;
                     while ((TextoLeido = lector.ReadLine()) != null)
                     {
@@ -54,7 +55,17 @@ namespace S13Reto3
                         message.To.Add("cursosunilat@gmail.com");
                         await Email.ComposeAsync(message);
                     }
-                    
+                    */
+
+                    String TextoLeido;
+                    while ((TextoLeido = lector.ReadLine()) != null)
+                    {
+                        var message = new EmailMessage("Reto3", TextoLeido);
+                        message.Body = TextoLeido;
+                        message.To.Add("cursosunilat@gmail.com");
+                        await Email.ComposeAsync(message);
+                    }
+
                 }
             }
 
@@ -70,7 +81,7 @@ namespace S13Reto3
             {
                 using (var escritor = File.AppendText(rutaCompleta))
                 {
-                    escritor.Write(entrFrase.Text);
+                    escritor.Write(";" + entrFrase.Text);
                 }
             }
             else
